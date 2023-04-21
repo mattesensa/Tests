@@ -8,18 +8,52 @@
 
         internal int Add(int[] addendi)
         {
-            if (addendi == null || addendi.Length == 0) 
+            try
             {
-                throw new ArgumentNullException();
-            }
-            int sum = 0;
+                if (addendi == null || addendi.Length == 0)
+                {
+                    throw new ArgumentNullException();
+                }
+                int sum = 0;
 
-            foreach (int v in addendi) 
+                foreach (int v in addendi)
+                {
+                    sum += v;
+                }
+
+                return sum;
+
+            }catch (Exception ex)
             {
-                sum += v;
+                Console.WriteLine(ex.Message);
+                return -1;
+                
             }
+        }
 
-            return sum;
+        internal double Somma(double[] addendi)
+        {
+            try
+            {
+                if (addendi == null || addendi.Length == 0)
+                {
+                    throw new ArgumentNullException();
+                }
+                double sum = 0;
+
+                foreach (int v in addendi)
+                {
+                    sum += v;
+                }
+
+                return sum;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
         }
     }
 }
